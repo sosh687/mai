@@ -28,7 +28,10 @@ def cadastrar_pessoa(cadastros):
 
     cadastros.append({"nome": nome, "idade": idade, "turma": turma, "curso": curso})
     salvar_cadastros(cadastros)
-    print("Cadastro realizado com sucesso!")
+    print("*Cadastro realizado com sucesso bruhhhh*")
+    print("'''Aham, paramos no dia 04/04/2025, na aula de reposição :D'''")
+    print("🚀 Cadastro enviado para a NASA. Agora eles sabem que você existe!")
+
 
 def ver_cadastros(cadastros):
     if not cadastros:
@@ -37,3 +40,23 @@ def ver_cadastros(cadastros):
         print("\n------ Lista de Cadastros ------")
         for i, pessoa in enumerate(cadastros, 1):
             print(f"{i}. Nome: {pessoa['nome']}, Idade: {pessoa['idade']}, Turma: {pessoa['turma']}, Curso: {pessoa['curso']}")
+
+def main():
+    cadastros = carregar_cadastros()
+
+    while True:
+        exibir_menu()
+        opcao = input("Escolha uma opção: ")
+
+        if opcao == "1":
+            cadastrar_pessoa(cadastros)
+        elif opcao == "2":
+            ver_cadastros(cadastros)
+        elif opcao == "3":
+            print("Saindo do programa...")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
+
+if __name__ == "__main__":
+    main()
